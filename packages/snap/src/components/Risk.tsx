@@ -21,7 +21,7 @@ export const Risk = ({ risk }: { risk: string }) => {
 
   return (
     <Box>
-      <Tooltip content={<Text>Risk: ${risk}</Text>}>
+      <Tooltip content={<Text>Risk: {risk}</Text>}>
         <Image src={riskIcon}></Image>
       </Tooltip>
     </Box>

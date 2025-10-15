@@ -1,4 +1,11 @@
 
+export enum ButtonEvents {
+  ChooseAddress = "choose-address"
+}
+export enum FormEvents {
+  ShowStrategies = "show-strategies"
+}
+
 export type StrategyAction = {
   description: string,
   tokens: string
@@ -24,5 +31,6 @@ export type PortfolioStrategiesResponse = {
 export type PortfolioResponse = {
   address: `0x${string}`,
   portfolio: any,
-  strategies: PortfolioStrategiesResponse[]
+  strategies: PortfolioStrategiesResponse[],
+  message?: string // on error
 }
