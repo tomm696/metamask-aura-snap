@@ -1,0 +1,31 @@
+{
+  "version": "0.1.0",
+  "description": "An unofficial community-build integration of Aura for Metamask.",
+  "proposedName": "Metamask Aura Snap (Unofficial)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tbd.git"
+  },
+  "source": {
+    "shasum": "Rtw2gvd1nEq4cQbu0ac0PsH2Me0YSYXwv5auSjIEDZY=",
+    "location": {
+      "npm": {
+        "filePath": "dist/bundle.js",
+        "packageName": "snap",
+        "registry": "https://registry.npmjs.org/"
+      }
+    }
+  },
+  "initialPermissions": {
+    "snap_dialog": {},
+    "endowment:rpc": {
+      "dapps": true,
+      "snaps": false
+    },
+    "endowment:page-home": {},
+    "endowment:ethereum-provider": {},
+    "endowment:network-access": {}
+  },
+  "platformVersion": "9.3.0",
+  "manifestVersion": "0.1"
+}

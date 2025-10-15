@@ -1,0 +1,27 @@
+import { Address, Banner, Box, Card, Link, Icon, Image, Heading, Section, Text, Row, Bold } from '@metamask/snaps-sdk/jsx';
+import { Action } from './Action';
+import { StrategiesResponse } from 'src/types';
+import { Risk } from './Risk';
+
+export const Strategy = ({ strategy }: { strategy: StrategiesResponse}) => {
+  return (
+    <Section>
+        <Box direction='horizontal'>
+            <Risk risk={strategy.risk}></Risk>
+            <Text>{strategy.name}</Text>
+            {/* <Row label="">
+                <Icon name='arrow-down'></Icon>
+            </Row> */}
+        </Box>
+        {/* <Card 
+        title={strategy.name} 
+        value={`Risk: ${strategy.risk}`}
+        /> */}
+        <Box>
+            <Box>
+                {strategy.actions.map(el => <Action action={el}></Action>)}
+            </Box>
+        </Box>
+    </Section>
+  );
+};
