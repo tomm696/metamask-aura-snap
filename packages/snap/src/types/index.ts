@@ -3,7 +3,8 @@ export enum ButtonEvents {
   ChooseAddress = "choose-address"
 }
 export enum FormEvents {
-  ShowStrategies = "show-strategies"
+  AccountSelected = "account-selected",
+  AddressSelected = "address-selected"
 }
 
 export type StrategyAction = {
@@ -33,4 +34,9 @@ export type PortfolioResponse = {
   portfolio: any,
   strategies: PortfolioStrategiesResponse[],
   message?: string // on error
+}
+
+export type AccountSelectorEventValue = {
+  addresses: `${string}:${string}:${string}`[]
+  accountId: string
 }

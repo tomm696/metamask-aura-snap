@@ -1,15 +1,19 @@
-import { Box, Image, Tooltip, Text, Option, Button, Checkbox, Dropdown, Form, Heading, Card, Selector, SelectorOption, AccountSelector } from '@metamask/snaps-sdk/jsx';
-import { ButtonEvents } from './../types';
+import { Box, Image, Tooltip, Text, Option, Button, Checkbox, Dropdown, Form, Heading, Card, Selector, SelectorOption, AccountSelector, Divider } from '@metamask/snaps-sdk/jsx';
+import { ButtonEvents, FormEvents } from './../types';
 
-export const ChooseAddress = ({ accounts }: { accounts: `0x${string}`[]}) => {
+export const ChooseAddress = ({ addresses }: { addresses: `0x${string}`[]}) => {
   return (
     <Box>
     <Heading>
+      Multiple addresses found in account
+    </Heading>
+    <Divider />
+    <Heading>
         Choose address:
     </Heading>
-    <Form name="show-strategies">
+    <Form name={FormEvents.AddressSelected}>
         <Dropdown name="address">
-        {accounts.map(el => <Option value={el}>{el}</Option>)}
+        {addresses.map(el => <Option value={el}>{el}</Option>)}
         </Dropdown>
         <Checkbox name="default" label="Use this address by default" checked={true} />
         <Button type="submit">Show strategies</Button>
