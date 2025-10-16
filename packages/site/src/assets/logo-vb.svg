@@ -1,4 +1,4 @@
-<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 125 125" width="125" height="125">
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 125 125" >
 	<defs>
 		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
 			<path d="m125 0v125h-125v-125z"/>
