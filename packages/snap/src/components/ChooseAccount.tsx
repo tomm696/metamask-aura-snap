@@ -1,4 +1,4 @@
-import { Box, Image, Tooltip, Text, Option, Divider, Button, Checkbox, Dropdown, Form, Heading, Card, Selector, SelectorOption, AccountSelector } from '@metamask/snaps-sdk/jsx';
+import { Box, Image, Tooltip, Text, Option, Divider, Button, Checkbox, Dropdown, Form, Heading, Card, Selector, SelectorOption, AccountSelector, Section } from '@metamask/snaps-sdk/jsx';
 import { ButtonEvents, FormEvents } from './../types';
 import logo from './../assets/logo.svg'
 
@@ -19,7 +19,14 @@ export const ChooseAccount = ({ selectedAccount }: { selectedAccount: any}) => {
             chainIds={['eip155:1']} 
             {...(selectedAccount ? { value: selectedAccount } : {})}
             ></AccountSelector>
-          <Button type="submit">Show strategies</Button>
+            <Box alignment='center' direction='horizontal'>
+              {/* this box of empty texts around the button helps highlight it a bit with the section background color */}
+              <Box><Text> </Text></Box>
+              <Section alignment='center'>
+                <Button type="submit">Show strategies</Button>
+              </Section>
+              <Box><Text> </Text></Box>
+            </Box>
       </Form>
       <Divider />
       <Box>

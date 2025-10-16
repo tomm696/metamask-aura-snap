@@ -1,4 +1,4 @@
-import { Box, Image, Tooltip, Text, Option, Button, Checkbox, Dropdown, Form, Heading, Card, Selector, SelectorOption, AccountSelector, Divider } from '@metamask/snaps-sdk/jsx';
+import { Box, Image, Tooltip, Text, Option, Button, Checkbox, Dropdown, Form, Heading, Card, Section, Selector, SelectorOption, AccountSelector, Divider, Footer } from '@metamask/snaps-sdk/jsx';
 import { ButtonEvents, FormEvents } from './../types';
 
 export const ChooseAddress = ({ addresses, lastDefaultAddressCheckBoxState }: { addresses: `0x${string}`[], lastDefaultAddressCheckBoxState: boolean}) => {
@@ -16,7 +16,14 @@ export const ChooseAddress = ({ addresses, lastDefaultAddressCheckBoxState }: { 
         {addresses.map(el => <Option value={el}>{el}</Option>)}
         </Dropdown>
         <Checkbox name="default" label="Use this address by default" checked={lastDefaultAddressCheckBoxState} />
-        <Button type="submit">Show strategies</Button>
+        <Box alignment='center' direction='horizontal'>
+          {/* this box of empty texts around the button helps highlight it a bit with the section background color */}
+          <Box><Text> </Text></Box>
+          <Section alignment='center'>
+            <Button type="submit">Show strategies</Button>
+          </Section>
+          <Box><Text> </Text></Box>
+        </Box>
     </Form>
     </Box>
   );

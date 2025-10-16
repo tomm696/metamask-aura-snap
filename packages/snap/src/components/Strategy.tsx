@@ -9,18 +9,9 @@ export const Strategy = ({ strategy }: { strategy: StrategiesResponse}) => {
         <Box direction='horizontal'>
             <Risk risk={strategy.risk}></Risk>
             <Text>{strategy.name}</Text>
-            {/* <Row label="">
-                <Icon name='arrow-down'></Icon>
-            </Row> */}
         </Box>
-        {/* <Card 
-        title={strategy.name} 
-        value={`Risk: ${strategy.risk}`}
-        /> */}
         <Box>
-            <Box>
-                {strategy.actions.map(el => <Action action={el}></Action>)}
-            </Box>
+            {strategy.actions.map(el => <Action action={el}></Action>)}
         </Box>
     </Section>
   );
