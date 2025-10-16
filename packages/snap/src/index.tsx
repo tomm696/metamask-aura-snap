@@ -7,10 +7,12 @@ import { Strategies } from './components/Strategies';
 import { StrategiesSkeleton } from './components/StrategiesSkeleton';
 import { ChooseAccount } from './components/ChooseAccount';
 import { ErrorMessage } from './components/ErrorMessage';
+import { Settings } from './components/Settings';
 
 async function getPortfolioStrategies(address: string): Promise<PortfolioResponse> {
   try {
-    const response = await fetch(`https://aura.adex.network/api/portfolio/strategies?address=${address}`)
+    const apiKey = await getState('apiKey')
+    const response = await fetch(`https://aura.adex.network/api/portfolio/strategies?address=${address}${apiKey?`&apiKey=${apiKey}`:''}`)
 
     return response.json()
   } catch (err) {
@@ -190,6 +192,21 @@ export const onUserInput: OnUserInputHandler = async ({ id, event }) => {
           },
         })
         break
+      case ButtonEvents.OpenSettings:
+        const apiKey = await getState('apiKey')
+        
+        await snap.request({
+          method: "snap_updateInterface",
+          params: {
+            id,
+            ui: (
+              <Container>
+                <Settings apiKey={apiKey}></Settings>
+              </Container>
+            )
+          },
+        })
+        break
     }
   } else if (event.type === UserInputEventType.FormSubmitEvent) {
     switch(event.name) {
@@ -238,6 +255,30 @@ export const onUserInput: OnUserInputHandler = async ({ id, event }) => {
         }
 
         await showStrategies(selectedAddress, id)
+        break;
+      case FormEvents.SettingsUpdated:
+        if (event.value['apiKey']) {
+          await updateState('apiKey', event.value['apiKey'])
+        } else {
+          await deleteState('apiKey')
+        }
+        const defaultAcct = await getState('defaultAccount') as AccountSelectorEventValue
+        const selectedAddr = defaultAcct?.addresses?.length > 0 ? defaultAcct.addresses[0] : null
+
+        await snap.request({
+          method: "snap_updateInterface",
+          params: {
+            id,
+            ui: (
+              <Container>
+                <Box>
+                  <Banner severity='info' title='Settings saved'><Text> </Text></Banner>
+                  <ChooseAccount selectedAccount={selectedAddr}></ChooseAccount>
+                </Box>
+              </Container>
+            )
+          },
+        })
         break;
     }
   }

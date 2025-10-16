@@ -1,10 +1,12 @@
 
 export enum ButtonEvents {
-  ChooseAddress = "choose-address"
+  ChooseAddress = "choose-address",
+  OpenSettings = "open-settings"
 }
 export enum FormEvents {
   AccountSelected = "account-selected",
-  AddressSelected = "address-selected"
+  AddressSelected = "address-selected",
+  SettingsUpdated = "settings-updated"
 }
 
 export type StrategyAction = {

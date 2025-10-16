@@ -29,6 +29,7 @@ export const ChooseAccount = ({ selectedAccount }: { selectedAccount: any}) => {
             </Box>
       </Form>
       <Divider />
+      <Button name={ButtonEvents.OpenSettings}>Settings</Button>
       <Box>
         <Text color='muted' size='sm' alignment='center'>Please note that the Metamask Aura Snap is not
         affiliated with Metamask or Aura. It's an open source project
