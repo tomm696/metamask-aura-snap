@@ -1,4 +1,4 @@
-# @metamask/template-snap-monorepo
+# Aura Connect Snap for Metamask
 
 This repository contains the Metamask Aura Connect Snap. For detailed
 instructions, see [the MetaMask documentation](https://docs.metamask.io/guide/snaps.html#serving-a-snap-to-your-local-environment).
