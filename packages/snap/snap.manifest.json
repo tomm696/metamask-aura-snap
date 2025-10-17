@@ -1,5 +1,5 @@
 {
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Unofficial community-built integration bringing Aura-powered DeFi and account insights into MetaMask",
   "proposedName": "Aura Connect",
   "repository": {
@@ -7,7 +7,7 @@
     "url": "https://github.com/tomm696/metamask-aura-snap.git"
   },
   "source": {
-    "shasum": "0h/EOoL2kXxGF1L369IozYfc2elaZxhaSk1fGW5iuZc=",
+    "shasum": "/Wp8WGiYU7LpLYuPRVUWC0OOLHHHWAXU/0hw6ZYjTAA=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
