@@ -1,16 +1,17 @@
 {
   "version": "0.1.0",
-  "description": "An unofficial community-build integration of Aura for Metamask.",
-  "proposedName": "Metamask Aura Snap (Unofficial)",
+  "description": "Unofficial community-built integration bringing Aura-powered DeFi and account insights into MetaMask",
+  "proposedName": "Aura Connect",
   "repository": {
     "type": "git",
     "url": "https://github.com/tbd.git"
   },
   "source": {
-    "shasum": "OyPr8dTIbAhUqBHiqIpYNQztis+422X73pXXU6h7r/E=",
+    "shasum": "g1N8D7pnBI0fUmeELx5v41L67SJmtr2FKGsQA7vqOFY=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
+        "iconPath": "images/logo.svg",
         "packageName": "snap",
         "registry": "https://registry.npmjs.org/"
       }

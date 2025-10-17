@@ -10,7 +10,7 @@ describe('onRpcRequest', () => {
 
       const origin = 'Jest';
       const response = request({
-        method: 'hello',
+        method: 'chooseAccount',
         origin,
       });
 

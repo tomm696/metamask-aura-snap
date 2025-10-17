@@ -1,13 +1,13 @@
-import { type OnRpcRequestHandler, type OnHomePageHandler, OnUserInputHandler, UserInputEventType, ManageStateResult, SnapMethods } from '@metamask/snaps-sdk';
-import { Address, Banner, Box, Link, Container, Heading, Text, Image, Bold, Button, Skeleton, Option, Footer, Row, Value, Field, Form, Input, Dropdown, Divider } from '@metamask/snaps-sdk/jsx';
-import { Strategy } from './components/Strategy';
-import { AccountSelectorEventValue, ButtonEvents, FormEvents, PortfolioResponse, PortfolioStrategiesResponse } from './types';
+import { type OnRpcRequestHandler, type OnHomePageHandler, OnUserInputHandler, UserInputEventType, ManageStateResult } from '@metamask/snaps-sdk';
+import { Banner, Box, Text, Container } from '@metamask/snaps-sdk/jsx';
+import { AccountSelectorEventValue, ButtonEvents, FormEvents, PortfolioResponse } from './types';
 import { ChooseAddress } from './components/ChooseAddress';
 import { Strategies } from './components/Strategies';
 import { StrategiesSkeleton } from './components/StrategiesSkeleton';
 import { ChooseAccount } from './components/ChooseAccount';
 import { ErrorMessage } from './components/ErrorMessage';
 import { Settings } from './components/Settings';
+import { Howto } from './components/Howto';
 
 async function getPortfolioStrategies(address: string): Promise<PortfolioResponse> {
   try {
@@ -152,7 +152,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
   request,
 }) => {
   switch (request.method) {
-    case 'hello':
+    case 'chooseAccount':
       const defaultAccount = await getState('defaultAccount') as AccountSelectorEventValue
       const selectedAddress = defaultAccount?.addresses?.length > 0 ? defaultAccount.addresses[0] : null
       return snap.request({
@@ -207,6 +207,19 @@ export const onUserInput: OnUserInputHandler = async ({ id, event }) => {
           },
         })
         break
+      case ButtonEvents.OpenHowto:
+        await snap.request({
+          method: "snap_updateInterface",
+          params: {
+            id,
+            ui: (
+              <Container>
+                <Howto></Howto>
+              </Container>
+            )
+          },
+        })
+        break
     }
   } else if (event.type === UserInputEventType.FormSubmitEvent) {
     switch(event.name) {
@@ -215,7 +228,6 @@ export const onUserInput: OnUserInputHandler = async ({ id, event }) => {
 
         // map addresses from the CAIP-10 values to 0x.. string values
         const addresses = account.addresses.map(el => el.split(':').pop() as `0x${string}`)
-        addresses.push("0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045") // vitalik.eth - for debug
 
         // save account as default account
         await updateState('defaultAccount', account)

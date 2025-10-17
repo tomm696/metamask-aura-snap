@@ -4,7 +4,7 @@ import {
   ConnectButton,
   InstallFlaskButton,
   ReconnectButton,
-  SendHelloButton,
+  GetStartedButton,
   Card,
 } from '../components';
 import { defaultSnapOrigin } from '../config';
@@ -39,6 +39,10 @@ const Heading = styled.h1`
 `;
 
 const Span = styled.span`
+  color: ${(props) => props.theme.colors.primary?.default};
+`;
+
+const Link = styled.a`
   color: ${(props) => props.theme.colors.primary?.default};
 `;
 
@@ -110,15 +114,19 @@ const Index = () => {
     ? isFlask
     : snapsDetected;
 
-  const handleSendHelloClick = async () => {
-    await invokeSnap({ method: 'hello' });
+  const handleGetStartedClick = async () => {
+    await invokeSnap({ method: 'chooseAccount' });
   };
 
   return (
     <Container>
       <Heading>
-        Welcome to <Span>Metamask Aura Snap (unofficial)</Span>
+        Welcome to <Span>Aura Connect</Span> Snap
       </Heading>
+      <Subtitle>
+        Unofficial integration bringing <Link href="https://www.adex.network/" target="_blank">Aura</Link>-powered insights into <Link href="https://metamask.io/snaps" target="_blank">MetaMask</Link>.
+      </Subtitle>
+      <br />
       <Subtitle>
         Get started by connecting <code>metamask</code> below
       </Subtitle>
@@ -144,7 +152,7 @@ const Index = () => {
             content={{
               title: 'Connect',
               description:
-                'Get started by connecting to and installing the snap.',
+                'Get started by connecting to and installing the Aura Connect snap.',
               button: (
                 <ConnectButton
                   onClick={requestSnap}
@@ -175,10 +183,10 @@ const Index = () => {
           content={{
             title: 'Get started with Aura in Metamask',
             description:
-              'Choose an account and see what Aura has to offer, right within Metamask.',
+              'Choose an account and see what AdEx Aura has to offer, right within Metamask.',
             button: (
-              <SendHelloButton
-                onClick={handleSendHelloClick}
+              <GetStartedButton
+                onClick={handleGetStartedClick}
                 disabled={!installedSnap}
               />
             ),
@@ -192,11 +200,49 @@ const Index = () => {
         />
         <Notice>
           <p>
+            <b>What is <Link href="https://www.adex.network/" target="_blank">AdEx Aura</Link>?</b>
+          </p>
+          <br />
+          <p>
+            AdEx AURA is your personal AI agent framework, generating secure 
+            and high-impact DeFi strategy recommendations.
+          </p>
+          <br />
+          <p>For more insights into how AdEx Aura works see: <Link href="https://www.adex.network/blog/introducing-adex-aura/" target="_blank">Introducing AdEx Aura</Link></p>
+          <br />
+          <p>
+            <Link href="https://adexnetwork.notion.site/AdEx-AURA-Vision-198552af7b4f802d8f44c46b3f8ec7ec" target="_blank">To learn more about AdEx Aura and the AdEx Aura Vision - click here</Link>
+          </p>
+          <br />
+          <p>
+            <b>What is the Aura Connect snap?</b>
+          </p>
+          <br />
+          <p>
+            Aura Connect is an unofficial, community built and fully open source AdEx Aura integration for MetaMask. It let's you explore personalized DeFi insights and wallet-based recommendations through Aura’s public APIs for your MetaMask accounts.
+          </p>
+          <br />
+          <p>
+            <b>How to open the Aura Connect snap after connecting it to metamask?</b>
+          </p>
+          <p>
+            <p>After the Snap is installed you can:</p> 
+            <ul>
+              <li>Open <b>MetaMask</b></li>
+              <li>Click the <b>menu icon</b> in the upper right corner</li>
+              <li>Choose <b>Snaps</b></li>
+              <li>select the <b>Aura Connect Snap</b></li>
+            </ul>
+            <p>or click the "Get started" button above</p>
+          </p>
+        </Notice>
+        <Notice>
+          <p>
             <b>Disclaimers</b>
           </p>
           <br />
           <p>
-            Please note that the <b>Metamask Aura Snap</b> is not
+            Please note that the MetaMask <b>Aura Connect</b> snap is not
             affiliated with Metamask or Aura. It's an open source project
             built by the community to add Aura to your Metamask. Use at 
             your own risk. Aura does not provide financial advice, nor

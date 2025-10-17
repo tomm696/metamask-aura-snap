@@ -1,6 +1,5 @@
-import { Box, Image, Tooltip, Text, Option, Divider, Button, Checkbox, Field, Input, Dropdown, Form, Heading, Card, Selector, SelectorOption, AccountSelector, Section } from '@metamask/snaps-sdk/jsx';
+import { Box, Text, Button, Field, Input, Form, Heading, Section } from '@metamask/snaps-sdk/jsx';
 import { ButtonEvents, FormEvents } from './../types';
-import logo from './../assets/logo.svg'
 
 export const Settings = ({ apiKey }: { apiKey: string}) => {
   return (
@@ -8,7 +7,6 @@ export const Settings = ({ apiKey }: { apiKey: string}) => {
       <Heading>
           Settings
       </Heading>
-      <Text>api key is {apiKey}</Text>
       <Form name={FormEvents.SettingsUpdated}>
         <Field label="Aura API Key">
           <Input 

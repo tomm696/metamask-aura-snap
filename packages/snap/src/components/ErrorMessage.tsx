@@ -1,6 +1,5 @@
-import { Address, Banner, Box, Card, Divider, Link, Heading, Section, Text, Bold, Button, Skeleton } from '@metamask/snaps-sdk/jsx';
-import { ButtonEvents, PortfolioStrategiesResponse, StrategiesResponse, StrategyAction } from './../types';
-import { Strategy } from './Strategy';
+import { Banner, Box, Divider, Text, Button } from '@metamask/snaps-sdk/jsx';
+import { ButtonEvents } from './../types';
 
 export const ErrorMessage = ({ message }: { message: string }) => {
   return (

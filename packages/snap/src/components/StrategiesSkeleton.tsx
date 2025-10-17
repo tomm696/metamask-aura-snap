@@ -1,6 +1,5 @@
-import { Address, Banner, Box, Card, Divider, Link, Heading, Section, Text, Bold, Button, Skeleton } from '@metamask/snaps-sdk/jsx';
-import { ButtonEvents, PortfolioStrategiesResponse, StrategiesResponse, StrategyAction } from './../types';
-import { Strategy } from './Strategy';
+import { Address, Box, Divider, Heading, Section, Text, Skeleton } from '@metamask/snaps-sdk/jsx';
+import { StrategiesResponse } from './../types';
 
 export const StrategiesSkeleton = ({ address }: { address: `0x${string}` }) => {
     const strategies: StrategiesResponse[] = [{} as StrategiesResponse, {} as StrategiesResponse, {} as StrategiesResponse]

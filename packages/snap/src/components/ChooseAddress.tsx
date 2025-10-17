@@ -1,5 +1,5 @@
-import { Box, Image, Tooltip, Text, Option, Button, Checkbox, Dropdown, Form, Heading, Card, Section, Selector, SelectorOption, AccountSelector, Divider, Footer } from '@metamask/snaps-sdk/jsx';
-import { ButtonEvents, FormEvents } from './../types';
+import { Box, Text, Option, Button, Checkbox, Dropdown, Form, Heading, Section, Divider } from '@metamask/snaps-sdk/jsx';
+import { FormEvents } from './../types';
 
 export const ChooseAddress = ({ addresses, lastDefaultAddressCheckBoxState }: { addresses: `0x${string}`[], lastDefaultAddressCheckBoxState: boolean}) => {
   return (

@@ -1,4 +1,4 @@
-import { Address, Banner, Box, Card, Link, Icon, Image, Heading, Section, Text, Row, Bold } from '@metamask/snaps-sdk/jsx';
+import { Box, Section, Text } from '@metamask/snaps-sdk/jsx';
 import { Action } from './Action';
 import { StrategiesResponse } from 'src/types';
 import { Risk } from './Risk';

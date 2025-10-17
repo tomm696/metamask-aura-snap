@@ -47,7 +47,7 @@ export const Header = ({
     <HeaderWrapper>
       <LogoWrapper>
         <SnapLogo color={theme.colors.icon?.default} size={36} />
-        <Title>Metamask Aura Snap (Unofficial)</Title>
+        <Title><b>Aura Connect</b> Snap (Unofficial)</Title>
       </LogoWrapper>
       <RightContainer>
         <Toggle

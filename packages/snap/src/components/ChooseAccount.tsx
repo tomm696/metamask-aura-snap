@@ -1,4 +1,4 @@
-import { Box, Image, Tooltip, Text, Option, Divider, Button, Checkbox, Dropdown, Form, Heading, Card, Selector, SelectorOption, AccountSelector, Section } from '@metamask/snaps-sdk/jsx';
+import { Box, Image, Text, Divider, Button, Form, Heading, AccountSelector, Section } from '@metamask/snaps-sdk/jsx';
 import { ButtonEvents, FormEvents } from './../types';
 import logo from './../assets/logo.svg'
 
@@ -8,7 +8,7 @@ export const ChooseAccount = ({ selectedAccount }: { selectedAccount: any}) => {
       <Box alignment='center' direction='horizontal'>
         <Image src={logo}></Image>
       </Box>
-      <Text color='alternative' alignment='center' fontWeight='bold'>Metamask Aura Snap (Unofficial)</Text>
+      <Text color='alternative' alignment='center' fontWeight='bold'>Aura Connect Snap (Unofficial)</Text>
       <Heading>
           Choose account:
       </Heading>
@@ -29,6 +29,7 @@ export const ChooseAccount = ({ selectedAccount }: { selectedAccount: any}) => {
             </Box>
       </Form>
       <Divider />
+      <Button name={ButtonEvents.OpenHowto}>How to Use (FAQ)</Button>
       <Button name={ButtonEvents.OpenSettings}>Settings</Button>
       <Box>
         <Text color='muted' size='sm' alignment='center'>Please note that the Metamask Aura Snap is not

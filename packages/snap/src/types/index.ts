@@ -1,7 +1,8 @@
 
 export enum ButtonEvents {
   ChooseAddress = "choose-address",
-  OpenSettings = "open-settings"
+  OpenSettings = "open-settings",
+  OpenHowto = "open-howto"
 }
 export enum FormEvents {
   AccountSelected = "account-selected",
@@ -9,9 +10,19 @@ export enum FormEvents {
   SettingsUpdated = "settings-updated"
 }
 
+export type Platform = {
+  name: string,
+  url: string
+}
+
 export type StrategyAction = {
   description: string,
-  tokens: string
+  tokens: string,
+  platforms: Platform[]
+  networks: string[]
+  operations: string[]
+  apy: string,
+  flags: string[]
 }
 
 export type StrategiesResponse = {
