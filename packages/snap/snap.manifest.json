@@ -7,7 +7,7 @@
     "url": "https://github.com/tbd.git"
   },
   "source": {
-    "shasum": "odT7vFaZjtUVi0jQWeqQ6ybiW07u074FwlDBUBfjIVU=",
+    "shasum": "OyPr8dTIbAhUqBHiqIpYNQztis+422X73pXXU6h7r/E=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
@@ -24,7 +24,6 @@
       "snaps": false
     },
     "endowment:page-home": {},
-    "endowment:ethereum-provider": {},
     "endowment:network-access": {}
   },
   "platformVersion": "9.3.0",
