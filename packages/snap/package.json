@@ -1,6 +1,6 @@
 {
-  "name": "snap",
-  "version": "0.1.0",
+  "name": "metamask-aura-connect-snap",
+  "version": "0.1.1",
   "description": "Metamask Aura unofficial community-build integration",
   "repository": {
     "type": "git",
@@ -10,6 +10,7 @@
   "main": "./dist/bundle.js",
   "files": [
     "dist/",
+    "images/",
     "snap.manifest.json"
   ],
   "scripts": {
