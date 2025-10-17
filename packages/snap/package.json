@@ -4,7 +4,7 @@
   "description": "Metamask Aura unofficial community-build integration",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tbd.git"
+    "url": "https://github.com/tomm696/metamask-aura-snap.git"
   },
   "license": "(MIT-0 OR Apache-2.0)",
   "main": "./dist/bundle.js",

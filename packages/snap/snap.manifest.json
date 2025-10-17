@@ -4,10 +4,10 @@
   "proposedName": "Aura Connect",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tbd.git"
+    "url": "https://github.com/tomm696/metamask-aura-snap.git"
   },
   "source": {
-    "shasum": "g1N8D7pnBI0fUmeELx5v41L67SJmtr2FKGsQA7vqOFY=",
+    "shasum": "fyVMGe4Ed92uKZWf8JWJ0ADbs3SV8BQM9YHgEbuefgE=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
