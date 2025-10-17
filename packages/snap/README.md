@@ -1,12 +1,15 @@
-# TypeScript Example Snap
+# Aura Connect Snap for Metamask
 
-This snap demonstrates how to develop a snap with TypeScript. It is a simple
-snap that displays a confirmation dialog when the `hello` JSON-RPC method is
-called.
+This repository contains the Metamask Aura Connect Snap. For detailed
+instructions, see [the MetaMask documentation](https://docs.metamask.io/guide/snaps.html#serving-a-snap-to-your-local-environment).
 
-## Testing
+Aura Connect is an unofficial, community built and fully open source AdEx Aura integration for MetaMask. It let's you explore personalized DeFi insights and wallet-based recommendations through Aura’s public APIs for your MetaMask accounts.
 
-The snap comes with some basic tests, to demonstrate how to write tests for
-snaps. To test the snap, run `yarn test` in this directory. This will use
-[`@metamask/snaps-jest`](https://github.com/MetaMask/snaps/tree/main/packages/snaps-jest)
-to run the tests in `src/index.test.ts`.
+## AdEx Aura is not affiliated with the Aura Connect snap
+
+AdEx AURA is your personal AI agent framework, generating secure and high-impact DeFi strategy recommendations.
+For more insights into how AdEx Aura works see: [Introducing AdEx Aura](https://www.adex.network/blog/introducing-adex-aura/)
+
+## More info
+
+see https://github.com/tomm696/metamask-aura-snap/blob/master/README.md
