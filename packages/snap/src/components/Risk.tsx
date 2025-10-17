@@ -1,9 +1,10 @@
 import { Box, Image, Tooltip, Text } from '@metamask/snaps-sdk/jsx';
-import riskLowIcon from './../assets/risk-low.svg'
-import riskModerateIcon from './../assets/risk-moderate.svg'
-import riskHighIcon from './../assets/risk-high.svg'
-import riskOpportunisticIcon from './../assets/risk-opportunistic.svg'
-import riskOtherIcon from './../assets/risk-other.svg'
+
+import riskHighIcon from '../assets/risk-high.svg';
+import riskLowIcon from '../assets/risk-low.svg';
+import riskModerateIcon from '../assets/risk-moderate.svg';
+import riskOpportunisticIcon from '../assets/risk-opportunistic.svg';
+import riskOtherIcon from '../assets/risk-other.svg';
 
 export const Risk = ({ risk }: { risk: string }) => {
   const riskIcons: any = {
@@ -11,12 +12,12 @@ export const Risk = ({ risk }: { risk: string }) => {
     moderate: riskModerateIcon,
     high: riskHighIcon,
     opportunistic: riskOpportunisticIcon,
-    other: riskOtherIcon
-  }
-  let riskIcon = riskIcons[risk]
+    other: riskOtherIcon,
+  };
+  let riskIcon = riskIcons[risk];
 
   if (!riskIcon) {
-    riskIcon = riskIcons.other
+    riskIcon = riskIcons.other;
   }
 
   return (

@@ -1,4 +1,4 @@
-import {ReactComponent as Logo} from './../assets/logo-vb.svg'
+import { ReactComponent as Logo } from '../assets/logo-vb.svg';
 
 export const SnapLogo = ({
   color,
@@ -6,6 +6,4 @@ export const SnapLogo = ({
 }: {
   color?: string | undefined;
   size: number;
-}) => (
-  <Logo width={size} height={size} />
-);
+}) => <Logo width={size} height={size} />;

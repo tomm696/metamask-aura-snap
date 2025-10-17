@@ -16,8 +16,8 @@ describe('onRpcRequest', () => {
       const ui = (await response.getInterface()) as SnapConfirmationInterface;
       await ui.ok();
 
-      expect(ui.id).toBeTruthy()
-      expect(ui.content).toBeTruthy()
+      expect(ui.id).toBeTruthy();
+      expect(ui.content).toBeTruthy();
     });
   });
 

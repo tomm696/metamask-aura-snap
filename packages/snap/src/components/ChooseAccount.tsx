@@ -1,42 +1,62 @@
-import { Box, Image, Text, Divider, Button, Form, Heading, AccountSelector, Section } from '@metamask/snaps-sdk/jsx';
-import { ButtonEvents, FormEvents } from './../types';
-import logo from './../assets/logo.svg'
+import {
+  Box,
+  Image,
+  Text,
+  Divider,
+  Button,
+  Form,
+  Heading,
+  AccountSelector,
+  Section,
+} from '@metamask/snaps-sdk/jsx';
 
-export const ChooseAccount = ({ selectedAccount }: { selectedAccount: any}) => {
+import logo from '../assets/logo.svg';
+import { ButtonEvents, FormEvents } from '../types';
+
+export const ChooseAccount = ({
+  selectedAccount,
+}: {
+  selectedAccount: any;
+}) => {
   return (
     <Box>
-      <Box alignment='center' direction='horizontal'>
+      <Box alignment="center" direction="horizontal">
         <Image src={logo}></Image>
       </Box>
-      <Text color='alternative' alignment='center' fontWeight='bold'>Aura Connect Snap (Unofficial)</Text>
-      <Heading>
-          Choose account:
-      </Heading>
+      <Text color="alternative" alignment="center" fontWeight="bold">
+        Aura Connect Snap (Unofficial)
+      </Text>
+      <Heading>Choose account:</Heading>
       <Form name={FormEvents.AccountSelected}>
-          <AccountSelector 
-            name="account" 
-            switchGlobalAccount={false} 
-            chainIds={['eip155:1']} 
-            {...(selectedAccount ? { value: selectedAccount } : {})}
-            ></AccountSelector>
-            <Box alignment='center' direction='horizontal'>
-              {/* this box of empty texts around the button helps highlight it a bit with the section background color */}
-              <Box><Text> </Text></Box>
-              <Section alignment='center'>
-                <Button type="submit">Show strategies</Button>
-              </Section>
-              <Box><Text> </Text></Box>
-            </Box>
+        <AccountSelector
+          name="account"
+          switchGlobalAccount={false}
+          chainIds={['eip155:1']}
+          {...(selectedAccount ? { value: selectedAccount } : {})}
+        ></AccountSelector>
+        <Box alignment="center" direction="horizontal">
+          {/* this box of empty texts around the button helps highlight it a bit with the section background color */}
+          <Box>
+            <Text> </Text>
+          </Box>
+          <Section alignment="center">
+            <Button type="submit">Show strategies</Button>
+          </Section>
+          <Box>
+            <Text> </Text>
+          </Box>
+        </Box>
       </Form>
       <Divider />
       <Button name={ButtonEvents.OpenHowto}>How to Use (FAQ)</Button>
       <Button name={ButtonEvents.OpenSettings}>Settings</Button>
       <Box>
-        <Text color='muted' size='sm' alignment='center'>Please note that the Metamask Aura Snap is not
-        affiliated with Metamask or Aura. It's an open source project
-        built by the community to add Aura to your Metamask. Use at 
-        your own risk. Aura does not provide financial advice, nor
-        does this snap.</Text>
+        <Text color="muted" size="sm" alignment="center">
+          Please note that the Metamask Aura Snap is not affiliated with
+          Metamask or Aura. It's an open source project built by the community
+          to add Aura to your Metamask. Use at your own risk. Aura does not
+          provide financial advice, nor does this snap.
+        </Text>
       </Box>
     </Box>
   );
