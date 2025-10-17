@@ -5,9 +5,10 @@ import riskLowIcon from '../assets/risk-low.svg';
 import riskModerateIcon from '../assets/risk-moderate.svg';
 import riskOpportunisticIcon from '../assets/risk-opportunistic.svg';
 import riskOtherIcon from '../assets/risk-other.svg';
+import { RiskLevel } from 'src/types';
 
-export const Risk = ({ risk }: { risk: string }) => {
-  const riskIcons: any = {
+export const Risk = ({ risk }: { risk: RiskLevel }) => {
+  const riskIcons: Record<RiskLevel, string> = {
     low: riskLowIcon,
     moderate: riskModerateIcon,
     high: riskHighIcon,

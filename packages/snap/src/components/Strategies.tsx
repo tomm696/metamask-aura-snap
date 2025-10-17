@@ -8,7 +8,7 @@ import {
 
 import { Strategy } from './Strategy';
 import type { PortfolioStrategiesResponse, StrategiesResponse } from '../types';
-import { ButtonEvents, StrategyAction } from '../types';
+import { ButtonEvents } from '../types';
 
 export const Strategies = ({
   address,
@@ -20,7 +20,7 @@ export const Strategies = ({
   const strategies: StrategiesResponse[] = [];
 
   for (const portfolioStrategy of portfolioStrategies) {
-    if (portfolioStrategy.response && portfolioStrategy.response.length) {
+    if (portfolioStrategy.response?.length) {
       strategies.push(...portfolioStrategy.response);
     }
   }

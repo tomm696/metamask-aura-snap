@@ -27,8 +27,10 @@ export type StrategyAction = {
 export type StrategiesResponse = {
   actions: StrategyAction[];
   name: string;
-  risk: string;
+  risk: RiskLevel;
 };
+
+export type RiskLevel = 'low' | 'moderate' | 'high' | 'opportunistic' | 'other';
 
 export type PortfolioStrategiesResponse = {
   hash: string;

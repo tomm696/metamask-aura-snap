@@ -3,6 +3,7 @@ import type {
   ManageStateResult,
   OnRpcRequestHandler,
   OnHomePageHandler,
+  Json,
 } from '@metamask/snaps-sdk';
 import { UserInputEventType } from '@metamask/snaps-sdk';
 import { Banner, Box, Text, Container } from '@metamask/snaps-sdk/jsx';
@@ -108,7 +109,7 @@ async function getAddressForAccount(
   addresses: `0x${string}`[],
 ): Promise<`0x${string}` | null> {
   if (addresses.length > 1) {
-    const defaultAddress = await getState('defaultAddress');
+    const defaultAddress = await getState('defaultAddress') as `0x${string}`;
 
     if (defaultAddress && addresses.includes(defaultAddress)) {
       return defaultAddress;
@@ -126,8 +127,8 @@ async function getAddressForAccount(
  */
 async function getState(
   key: string,
-  defaultValue: any = null,
-): Promise<any | null> {
+  defaultValue: Json = null,
+): Promise<Json> {
   const currentState = await snap.request({
     method: 'snap_manageState',
     params: { operation: 'get' },
@@ -147,7 +148,7 @@ async function getState(
  */
 async function updateState(
   key: string,
-  value: any,
+  value: Json,
 ): Promise<ManageStateResult> {
   const currentState =
     (await snap.request({
@@ -257,7 +258,7 @@ export const onUserInput: OnUserInputHandler = async ({ id, event }) => {
         });
         break;
       case ButtonEvents.OpenSettings:
-        const apiKey = await getState('apiKey');
+        const apiKey = await getState('apiKey') as string;
 
         await snap.request({
           method: 'snap_updateInterface',
@@ -301,7 +302,7 @@ export const onUserInput: OnUserInputHandler = async ({ id, event }) => {
         const lastDefaultAddressCheckBoxState = await getState(
           'lastDefaultAddressCheckBoxState',
           true,
-        );
+        ) as boolean;
 
         const address = await getAddressForAccount(addresses);
 
