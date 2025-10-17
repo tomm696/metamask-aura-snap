@@ -1,21 +1,18 @@
 # @metamask/template-snap-monorepo
 
-This repository demonstrates how to develop a snap with TypeScript. For detailed
+This repository contains the Metamask Aura Connect Snap. For detailed
 instructions, see [the MetaMask documentation](https://docs.metamask.io/guide/snaps.html#serving-a-snap-to-your-local-environment).
 
-MetaMask Snaps is a system that allows anyone to safely expand the capabilities
-of MetaMask. A _snap_ is a program that we run in an isolated environment that
-can customize the wallet experience.
+Aura Connect is an unofficial, community built and fully open source AdEx Aura integration for MetaMask. It let's you explore personalized DeFi insights and wallet-based recommendations through Aura’s public APIs for your MetaMask accounts.
 
-## Snaps is pre-release software
+## AdEx Aura is not affiliated with the Aura Connect snap
 
-To interact with (your) Snaps, you will need to install [MetaMask Flask](https://metamask.io/flask/),
-a canary distribution for developers that provides access to upcoming features.
+AdEx AURA is your personal AI agent framework, generating secure and high-impact DeFi strategy recommendations.
+For more insights into how AdEx Aura works see: [Introducing AdEx Aura](https://www.adex.network/blog/introducing-adex-aura/)
 
 ## Getting Started
 
-Clone the template-snap repository [using this template](https://github.com/MetaMask/template-snap-monorepo/generate)
-and set up the development environment:
+Clone the repository and set up the development environment:
 
 ```shell
 yarn install && yarn start
