@@ -1,6 +1,6 @@
 {
   "name": "metamask-aura-connect-snap",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Metamask Aura unofficial community-build integration",
   "repository": {
     "type": "git",
